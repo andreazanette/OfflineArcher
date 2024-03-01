@@ -32,6 +32,8 @@ python -m pip install -e .
 ```
 ### 2. Download Datasets and Oracles
 Offline datasets and Oracles checkpoints used in the paper can be found [here](https://drive.google.com/drive/folders/1pRocQI0Jv479G4vNMtQn1JOq8Shf2B6U?usp=sharing).
+You will need to create an "oracles" and "datasets" folder and put the oracle and dataset in such folders.
+The oracle for Twenty Questions should be named 20q_t5_oracle.pt and the dataset should be called "twenty_questions.json".
 
 ### 3. Run Experiments
 You can directly run experiments by runnig the launch scripts. For example, in order to lauch Offline Archer on Twenty Question simply run
