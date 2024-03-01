@@ -1,7 +1,6 @@
 import random
 from typing import Optional, Dict
 import time
-from openai import OpenAI
 import logging
 logging.getLogger().setLevel(logging.CRITICAL)
 import torch
@@ -47,7 +46,6 @@ class TwentyQuestionsEnv():
         self.word_list = word_list
         self.word_list =[ list(map(lambda x: x.lower(), word.split(";"))) for word in self.word_list]
         self.max_conversation_length = max_conversation_length
-        self.client = OpenAI(api_key = "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", timeout= 20.0)
 
         self.random = random.Random(None)
         self.count = 0
@@ -65,25 +63,6 @@ class TwentyQuestionsEnv():
             return False
         guess = question.split(" ")[-1].lower()
         return guess in self.curr_word
-
-    def generate_answer(self, question):
-        prompt = PROMPT_TEMPLATE.format(question = question, word = self.curr_word[0])
-        for _ in range(5):
-            try:
-                # print("trying to get response")
-                response = self.client.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": prompt}
-                    ],
-                    max_tokens = 32,
-                    )
-                break
-            except Exception as e:
-                print(type(e), e)
-                time.sleep(1)
-        return response.choices[0].message.content
     
     def _step(self, question, answer):
         if answer.strip() == 'yes':
