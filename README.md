@@ -41,3 +41,13 @@ You can directly run experiments by runnig the launch scripts. For example, in o
 . submit_OfflineArcher_TwentyQuestions.sh
 ```
 The code uses the torch lightning framework. Please refer to the documentation of torch lightning (https://lightning.ai/docs/pytorch/stable/) for additional information, such as using different flags when launching the code.
+
+### 4. Citing Archer
+@misc{zhou2024archer,
+      title={ArCHer: Training Language Model Agents via Hierarchical Multi-Turn RL}, 
+      author={Yifei Zhou and Andrea Zanette and Jiayi Pan and Sergey Levine and Aviral Kumar},
+      year={2024},
+      eprint={2402.19446},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
