@@ -40,3 +40,4 @@ You can directly run experiments by runnig the launch scripts. For example, in o
 ```bash
 . submit_OfflineArcher_TwentyQuestions.sh
 ```
+The code uses the torch lightning framework. Please refer to the documentation of torch lightning (https://lightning.ai/docs/pytorch/stable/) for additional information, such as using different flags when launching the code.
