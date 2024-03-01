@@ -1,0 +1,11 @@
+jsonargparse
+lightning-utilities
+numpy
+pytorch-lightning
+safetensors
+sentencepiece
+torch
+torchmetrics
+tqdm
+transformers
+wandb
