@@ -42,7 +42,7 @@ You can directly run experiments by runnig the launch scripts. For example, in o
 ```
 The code uses the torch lightning framework. Please refer to the documentation of torch lightning (https://lightning.ai/docs/pytorch/stable/) for additional information, such as using different flags when launching the code.
 For example, in order to run on GPU 0 please add 
---trainer.devices=[0].
+--trainer.devices=[0] to the launch script.
 
 ### 4. Citing Archer
 ```
