@@ -4,6 +4,8 @@
 #SBATCH --nodelist=node-gpu01
 #SBATCH --gres=gpu:1    # Request N GPUs per machine
 
+. init.sh
+
 actor_lr=1e-4
 critic_lr=1e-5
 
@@ -26,10 +28,10 @@ python main.py fit \
 --model.critic_expectile=$critic_expectile \
 --model.inv_temp=$inv_temp \
 --model.accumulate_grad_batches=$accumulate_grad_batches \
---trainer.fast_dev_run=True \
+--trainer.fast_dev_run=False \
 --trainer.max_epoch=10 \
 --trainer.logger=WandbLogger \
---trainer.logger.init_args.project="TwentyQuestions" \
+--trainer.logger.init_args.project="TwentyQuestions-Official" \
 --trainer.logger.init_args.name="Test-AC-critic_expectile_$critic_expectile-inv_temp_$inv_temp" \
 --trainer.strategy='ddp_find_unused_parameters_true' \
 --trainer.val_check_interval=250
